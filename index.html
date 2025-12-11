@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Qrious QR generation library (small, no build required) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>QR Code Generator</h1>
+
+    <p>Enter a URL below and press Generate. Use the Test button to auto-fill the Rickroll link and verify the generator works.</p>
+
+    <label for="urlInput">URL</label>
+    <input id="urlInput" type="url" placeholder="https://example.com" aria-label="URL to encode" />
+
+    <div class="controls">
+      <button id="generateBtn">Generate</button>
+      <button id="testBtn">Test with Rickroll</button>
+      <button id="downloadBtn" disabled>Download PNG</button>
+      <button id="clearBtn">Clear</button>
+    </div>
+
+    <div id="error" role="status" aria-live="polite"></div>
+
+    <section class="qr-area">
+      <canvas id="qr" width="256" height="256" aria-hidden="true"></canvas>
+      <div id="testStatus" class="test-status" aria-live="polite"></div>
+    </section>
+
+    <p class="note">Scan the QR with your phone to confirm it opens the URL.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
